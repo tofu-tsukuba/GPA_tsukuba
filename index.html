@@ -1,0 +1,59 @@
+<h1>筑波大学GPA計算</h1>
+
+<style>
+    .diet_form {
+        background: #eaf4ff;
+        padding: 10px 30px;
+    }
+    form dl dt {
+        width: 200px;
+        height: 40px;
+        padding: 10px 0;
+        line-height: 40px;
+        float: left;
+    }
+    form dl dd {
+        padding: 10px 0;
+        margin: 0;
+    }
+    .box {
+        box-sizing: border-box;
+        width: 150px !important;
+        height: 40px !important;
+        margin: 0 !important;
+        padding: 0 10px !important;
+    }
+    .calc-btn {
+        width: 80px;
+        height: 30px;
+        border: 1px solid #333;
+    }
+    .calc-btn:hover {
+        cursor: pointer;
+    }
+    </style>
+    <form class="diet_form">
+        <dl>
+            <dt>A+</dt>
+            <dd><input type="number" class="box" name="num_S"></dd>
+            <dt>A</dt>
+            <dd><input type="number" class="box" name="num_A"></dd>
+            <dt>B</dt>
+            <dd><input type="number" class="box" name="num_B"></dd>
+            <dt>C</dt>
+            <dd><input type="number" class="box" name="num_C"></dd>
+            <dt>D</Datag></dt>
+            <dd><input type="number" class="box" name="num_D"></dd>
+            <p><input type="button" class="calc-btn" onclick="calc(num_S.value, num_A.value, num_B.value, num_C.value,num_D.value);" value="計算"></p>
+            <dt>GPA</dt>
+            <dd><input id="GPA" class="box" type="text" readonly=""></dd>
+            <dt>単位数</dt>
+            <dd><input id="sum" class="box" type="text" readonly=""></dd>
+        </dl>
+    </form>
+    <script>
+        function calc(num_S, num_A, num_B, num_C,num_D) {
+            const sum_value = document.getElementById('sum').value = (Math.round( (num_S * 1 + num_A * 1 + num_B * 1 + num_C * 1 + num_D  * 1) * 10))/10 ;
+            const GPA_value = document.getElementById('GPA').value = (Math.round (((num_S * 4.3 + num_A * 4 + num_B * 3 + num_C * 2 + num_D * 0 )/ sum_value) * 10))/10;
+        }
+    </script>
