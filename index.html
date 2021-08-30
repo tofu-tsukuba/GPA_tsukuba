@@ -42,7 +42,9 @@
             <dd><input type="number" class="box" name="num_B"></dd>
             <dt>C</dt>
             <dd><input type="number" class="box" name="num_C"></dd>
-            <p><input type="button" class="calc-btn" onclick="calc(num_S.value, num_A.value, num_B.value, num_C.value);" value="計算"></p>
+            <dt>D</Datag></dt>
+            <dd><input type="number" class="box" name="num_D"></dd>
+            <p><input type="button" class="calc-btn" onclick="calc(num_S.value, num_A.value, num_B.value, num_C.value,num_D.value);" value="計算"></p>
             <dt>GPA</dt>
             <dd><input id="GPA" class="box" type="text" readonly=""></dd>
             <dt>単位数</dt>
@@ -50,8 +52,8 @@
         </dl>
     </form>
     <script>
-        function calc(num_S, num_A, num_B, num_C) {
-            const sum_value = document.getElementById('sum').value = (Math.round( (num_S * 1 + num_A * 1 + num_B * 1 + num_C * 1) * 10))/10 ;
-            const GPA_value = document.getElementById('GPA').value = (Math.round (((num_S * 4.3 + num_A * 4 + num_B * 3 + num_C * 2 )/ sum_value) * 10))/10;
+        function calc(num_S, num_A, num_B, num_C,num_D) {
+            const sum_value = document.getElementById('sum').value = (Math.round( (num_S * 1 + num_A * 1 + num_B * 1 + num_C * 1 + num_D  * 1) * 10))/10 ;
+            const GPA_value = document.getElementById('GPA').value = (Math.round (((num_S * 4.3 + num_A * 4 + num_B * 3 + num_C * 2 + num_D * 0 )/ sum_value) * 10))/10;
         }
     </script>
